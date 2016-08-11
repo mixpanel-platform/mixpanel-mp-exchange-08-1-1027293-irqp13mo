@@ -18,20 +18,30 @@
       .input-section.events {
         width: 700px;
       }
+      .input {
+        vertical-align: top;
+      }
       .mixpanel-platform-label {
         display: none;
+        float: none;
       }
       #by {
         margin-left: 10px;
       }
       #byTwo {
-        margin-left: 270px;
+        margin-left: 273px;
       }
       #eventSelect, #propSelect, #propSelectTwo {
         display: inline-block;
       }
-      #dateSelect, #typeSelect {
+      #propSelect, #dateSelect, #typeSelect {
         margin-bottom: 15px;
+      }
+      #propSelectTwo {
+        left: 1px;
+      }
+      #dateSelect {
+        height: 33px;
       }
       #typeSelect {
         max-width: 206px;
@@ -45,15 +55,15 @@
       </div>
       <div class="inputs">
         <div class="input-section events">
-          <div id="eventSelect"></div>
+          <div class="input" id="eventSelect"></div>
           <div id="by" class="mixpanel-platform-label">by</div>
-          <div id="propSelect"></div>
+          <div class="input" id="propSelect"></div>
           <div id="byTwo" class="mixpanel-platform-label">and</div>
-          <div id="propSelectTwo"></div>
+          <div class="input" id="propSelectTwo"></div>
         </div>
         <div class="input-section options">
-          <div id="dateSelect"></div>
-          <div id="typeSelect"></div>
+          <div class="input" id="dateSelect"></div>
+          <div class="input" id="typeSelect"></div>
         </div>
       </div>
       <div style="clear: both;"></div>
@@ -157,9 +167,9 @@
         //actions when dropdowns change
         eventSelect.on('change', function(e, eventName) {
           propSelect.MPPropertySelect('setEvent', eventName);
-          $("#by").show();
+          $("#by").css('display', 'inline-block');
           propSelectTwo.MPPropertySelect('setEvent', eventName);
-          $("#byTwo").show();
+          $("#byTwo").css('display', 'inline-block');
           runQuery();
         });
         propSelectTwo.on('change', runQuery);
