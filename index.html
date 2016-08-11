@@ -11,6 +11,13 @@
         color: rgb(95,105,131);
         margin: 15px 0;
       }
+      .input-section {
+        display: inline-block;
+        vertical-align: top;
+      }
+      .input-section.events {
+        width: 500px;
+      }
       .mixpanel-platform-label {
         display: none;
       }
@@ -21,10 +28,9 @@
         margin-left: 270px;
       }
       #eventSelect, #propSelect, #propSelectTwo {
-        float: left;
+        display: inline-block;
       }
       #dateSelect, #typeSelect {
-        float: right;
         margin-bottom: 15px;
       }
       #typeSelect {
@@ -38,13 +44,17 @@
         <h1>Multi-Segmentation Report</h1>
       </div>
       <div class="inputs">
-        <div id="eventSelect"></div>
-        <div id="by" class="mixpanel-platform-label">by</div>
-        <div id="propSelect"></div>
-        <div id="dateSelect"></div>
-        <div id="byTwo" class="mixpanel-platform-label">and</div>
-        <div id="propSelectTwo"></div>
-        <div id="typeSelect"></div>
+        <div class="input-section events">
+          <div id="eventSelect"></div>
+          <div id="by" class="mixpanel-platform-label">by</div>
+          <div id="propSelect"></div>
+          <div id="byTwo" class="mixpanel-platform-label">and</div>
+          <div id="propSelectTwo"></div>
+        </div>
+        <div class="input-section options">
+          <div id="dateSelect"></div>
+          <div id="typeSelect"></div>
+        </div>
       </div>
       <div style="clear: both;"></div>
       <div id="graph"></div>
